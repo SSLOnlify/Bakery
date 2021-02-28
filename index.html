@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>Bakery</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <nav id="navigationBar">
+        <div class="logo">
+            <h1>Bakery</h1>
+        </div>
+        <ul class="navBar" id="navBar">
+            <li class="navItems"><a href="#test">Home</a></li>
+            <li class="navItems"><a href="#">About Us</a></li>
+            <li class="navItems"><a href="#">Products</a></li>
+            <li class="navItems"><a href="#">Gallery</a></li>
+            <li class="navItems"><a href="#">Recipes</a></li>
+            <li class="navItems"><a href="#">Contacts</a></li>
+        </ul>
+        <div class="menu" onclick="menuDropDown()">
+            <img class="menuIcon" src="breadMenuIcon.png">
+        </div>
+    </nav>
+
+    <section class="main" id="mainSection">
+        <div class="container">
+            <h1 class="cp">The Best Place for the Finest <br><span class="cp2">Breads and Cakes</span></h1>
+            <button class="learnMore">Learn More</button>
+        </div>
+    </section>
+    <section class="second">
+
+        <p>Made with love and Care</p>
+
+        <div class="textWrapper">
+            <h1 class="catchPhrase">Where the Real Taste Comes From</h1>
+        </div>
+        <div class="desserts">
+            <h1>Exploring delicious Recipes one crumb at a time</h1>
+            <div class="imgContainer">
+                <img src="Images/SecondSection-1.jpg">
+                <img src="Images/SecondSection-2.jpg">
+                <img src="Images/SecondSection-3.jpg">
+            </div>
+            <button class="viewGallery">View Gallery</button>
+        </div>
+
+    </section>
+    <section class="readMore">
+        <div class="text-wrapper">
+            <h1>Straight from our oven to you</h1>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+        </div>
+        <button class="readMore">Read More</button>
+    </section>
+
+    <section class="events">
+
+        <div class="bgControl"></div>
+        <div class="eventsTextWrapper">
+            <h1>Our Events</h1>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+        </div>
+        <div class="eventWrapper">
+            <div class="event">
+                <div class="eventIcon">
+                    <h1>1</h1>
+                </div>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+            </div>
+
+            <div class="event">
+                <div class="eventIcon">
+                    <h1>2</h1>
+                </div>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+            </div>
+
+            <div class="event">
+                <div class="eventIcon">
+                    <h1>3</h1>
+                </div>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+            </div>
+
+
+        </div>
+    </section>
+    <section class="order">
+        <div class="orderWrapper">
+        <div class="orderOnline">
+            <h2>Order Online</h2>
+        </div>
+        <div class="orderCatering">
+            <h2>Order Catering</h2>
+        </div>
+            
+            </div>
+    </section>
+
+    <footer>
+      <div class="footerSection">
+            <h1>Company</h1>
+          <div class="linkWrapper">
+            <a href="#">About Us</a>
+            <a href="#">Our Services</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contacts</a>
+          </div>
+        </div>
+      <div class="footerSection">
+            <h1>Contact</h1>
+          <div class="linkWrapper">
+            <p class="site">LOREM@specialway.com</p>
+            <p class="phoneNumber">+1 XXX XXX XXXX</p>
+            <div class="socialMedia">
+                <img src="Images/SocialMedia/twitter.png">
+                <img src="Images/SocialMedia/instagram.png">
+                <img src="Images/SocialMedia/facebook.png">
+                <img src="Images/SocialMedia/gmail.png">
+              </div>
+          </div>
+        </div>
+      <div class="footerSection">
+            <h1>Address</h1>
+            <p>101 Somewhere road</p>
+            <p>Unknown Building</p>
+            <p>Brooklyn</p>
+            <p>400XXX</p>
+        </div>
+    </footer>
+    <script>
+        var ulNavBar = document.getElementById("navBar");
+        var mainNav = document.getElementById("navigationBar");
+        /*Setting nav background color with JavaScript to avoid error*/
+        var lightBlack = "rgba(0, 0, 0, 0.2)";
+        var darkerBlack = "rgba(0, 0, 0, 0.8)";
+        mainNav.style.backgroundColor = lightBlack;
+        /*##################################################*/
+        function menuDropDown() {
+            ulNavBar.classList.toggle("responsive");
+            mainNav.classList.toggle("nightMode");
+        }
+
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 0) {
+                mainNav.style.animationName = "navBackground";
+                mainNav.style.animationDuration = "0.5s";
+                mainNav.style.backgroundColor = darkerBlack;
+            } else if (window.scrollY === 0 && mainNav.style.backgroundColor === darkerBlack) {
+                mainNav.style.animationName = "reverseNavBackground";
+                mainNav.style.animationDuration = "0.5s";
+                mainNav.style.backgroundColor = lightBlack;
+            }
+
+        });
+    </script>
+</body></html>
